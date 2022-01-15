@@ -138,6 +138,41 @@ ALTER TABLE ONLY public.books
 
 
 --
+-- Name: authors_id_idx; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX authors_id_idx ON public.authors USING btree (id);
+
+
+--
+-- Name: authors_name_idx; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX authors_name_idx ON public.authors USING btree (name);
+
+
+--
+-- Name: books_author_id_idx; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX books_author_id_idx ON public.books USING btree (author_id);
+
+
+--
+-- Name: books_id_idx; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX books_id_idx ON public.books USING btree (id);
+
+
+--
+-- Name: books_name_idx; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE INDEX books_name_idx ON public.books USING btree (name);
+
+
+--
 -- Name: books fk_author; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
