@@ -1,0 +1,17 @@
+Please Import:-
+library.sql
+
+Find author by name "Leo"
+select * from authors where name LIKE '%Leo%';
+ 
+Find books of author "Fitzgerald"
+select b.name from books b inner join authors a on b.author_id = a.id and a.name like '%Fitzgerald%'; 
+
+Find authors without books:
+select * from authors a left join books b on  b.author_id = a.id where b.author_id is null;
+
+Count books per country:
+select count(b.id),a.country from books b inner join authors a on b.author_id = a.id  group by (country);
+
+Count average book length (in pages) per author:
+select avg(b.pages) ,a.name from books b inner join authors a on b.author_id = a.id  group by (a.id);
